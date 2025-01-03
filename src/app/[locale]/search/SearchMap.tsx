@@ -27,6 +27,7 @@ export default function SearchMap({ results, onMarkerClick }: SearchMapProps) {
         center={center}
         markers={results}
         onMarkerClick={onMarkerClick}
+        containerClassName="w-full h-full"
       />
     </div>
   );

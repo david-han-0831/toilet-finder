@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { useToiletData } from '@/hooks/useToiletData';
 import type { ToiletMarker } from '@/types/toilet';
 import SearchMap from './SearchMap';
@@ -22,6 +22,7 @@ export default function SearchPage() {
   const { toilets, isLoading } = useToiletData({ currentLocation });
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<ToiletMarker[]>([]);
+  const locale = useLocale();
 
   const handleBack = () => {
     router.back();
@@ -46,7 +47,7 @@ export default function SearchPage() {
   };
 
   const handleToiletClick = (id: string) => {
-    router.push(`/detail/${id}`);
+    router.push(`/${locale}/detail/${id}`);
   };
 
   return (

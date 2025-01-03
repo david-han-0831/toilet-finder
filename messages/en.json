@@ -1,0 +1,39 @@
+{
+  "common": {
+    "appName": "ToiletFinder",
+    "back": "Back",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Not found"
+  },
+  "home": {
+    "search": {
+      "placeholder": "Search toilet location, address"
+    },
+    "currentLocation": "Current location"
+  },
+  "search": {
+    "title": "Search",
+    "noResults": "No results found",
+    "enterKeyword": "Enter search keyword"
+  },
+  "detail": {
+    "title": "Toilet Information",
+    "facility": "Facility Information",
+    "address": "Address",
+    "transport": {
+      "title": "Transport Mode",
+      "walking": "Walking",
+      "transit": "Transit",
+      "driving": "Driving"
+    },
+    "navigation": "Navigation",
+    "notFound": "Toilet not found",
+    "currentLocation": "Current Location",
+    "loading": "Loading information...",
+    "error": "Failed to load information",
+    "distance": "Distance",
+    "minutes": "minutes",
+    "note": "Note"
+  }
+} 

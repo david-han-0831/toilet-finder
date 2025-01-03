@@ -1,0 +1,39 @@
+{
+  "common": {
+    "appName": "ToiletFinder",
+    "back": "뒤로 가기",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "notFound": "찾을 수 없습니다"
+  },
+  "home": {
+    "search": {
+      "placeholder": "화장실 위치, 주소 검색하기"
+    },
+    "currentLocation": "현재 위치"
+  },
+  "search": {
+    "title": "검색",
+    "noResults": "검색 결과가 없습니다",
+    "enterKeyword": "검색어를 입력해주세요"
+  },
+  "detail": {
+    "title": "화장실 정보",
+    "facility": "시설 정보",
+    "address": "주소",
+    "transport": {
+      "title": "이동 수단",
+      "walking": "도보",
+      "transit": "대중교통",
+      "driving": "자동차"
+    },
+    "navigation": "길찾기",
+    "notFound": "화장실을 찾을 수 없습니다",
+    "currentLocation": "현재 위치",
+    "loading": "정보를 불러오는 중...",
+    "error": "정보를 불러오는데 실패했습니다",
+    "distance": "거리",
+    "minutes": "분",
+    "note": "참고사항"
+  }
+} 

@@ -1,0 +1,39 @@
+{
+  "common": {
+    "appName": "ToiletFinder",
+    "back": "Zurück",
+    "loading": "Wird geladen...",
+    "error": "Ein Fehler ist aufgetreten",
+    "notFound": "Nicht gefunden"
+  },
+  "home": {
+    "search": {
+      "placeholder": "Toilettenstandort, Adresse suchen"
+    },
+    "currentLocation": "Aktueller Standort"
+  },
+  "search": {
+    "title": "Suche",
+    "noResults": "Keine Ergebnisse gefunden",
+    "enterKeyword": "Suchbegriff eingeben"
+  },
+  "detail": {
+    "title": "Toiletteninformation",
+    "facility": "Einrichtungsinformation",
+    "address": "Adresse",
+    "transport": {
+      "title": "Verkehrsmittel",
+      "walking": "Zu Fuß",
+      "transit": "ÖPNV",
+      "driving": "Auto"
+    },
+    "navigation": "Navigation",
+    "notFound": "Toilette nicht gefunden",
+    "currentLocation": "Aktueller Standort",
+    "loading": "Wird geladen...",
+    "error": "Fehler beim Laden der Informationen",
+    "distance": "Entfernung",
+    "minutes": "Minuten",
+    "note": "Hinweis"
+  }
+} 

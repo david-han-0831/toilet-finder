@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { useToiletData } from '@/hooks/useToiletData';
 import type { ToiletMarker } from '@/types/toilet';
-import SearchMap from './SearchMap';
+import SearchMap from '@/app/[locale]/search/SearchMap';
 import { formatDistance } from '@/utils/distance';
 import Header from '@/components/Header';
 
@@ -18,8 +18,8 @@ const DUSSELDORF_CENTER = {
 export default function SearchPage() {
   const router = useRouter();
   const t = useTranslations();
-  const [currentLocation, setCurrentLocation] = useState<google.maps.LatLngLiteral>(DUSSELDORF_CENTER);
-  const { toilets, isLoading } = useToiletData({ currentLocation });
+  const [currentLocation] = useState<google.maps.LatLngLiteral>(DUSSELDORF_CENTER);
+  const { toilets } = useToiletData({ currentLocation });
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<ToiletMarker[]>([]);
   const locale = useLocale();

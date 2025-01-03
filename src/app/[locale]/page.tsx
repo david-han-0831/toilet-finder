@@ -16,9 +16,8 @@ const DUSSELDORF_CENTER = {
 export default function HomePage() {
   const router = useRouter();
   const locale = useLocale();
-  const t = useTranslations();
-  const [currentLocation, setCurrentLocation] = useState<google.maps.LatLngLiteral>(DUSSELDORF_CENTER);
-  const { toilets, isLoading } = useToiletData({ currentLocation });
+  const [currentLocation] = useState<google.maps.LatLngLiteral>(DUSSELDORF_CENTER);
+  const { toilets } = useToiletData({ currentLocation });
 
   const handleSearch = () => {
     router.push(`/${locale}/search`);

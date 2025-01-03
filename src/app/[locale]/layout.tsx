@@ -1,6 +1,6 @@
 import { Geist } from "next/font/google";
 import { unstable_setRequestLocale } from 'next-intl/server';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from "next/navigation";
 import { locales } from "@/i18n";
 import "../globals.css";
@@ -19,25 +19,20 @@ interface RootLayoutProps {
   params: { locale: string };
 }
 
-async function getMessages(locale: string) {
-  try {
-    return (await import(`../../../messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
-}
-
 export default async function RootLayout({
   children,
   params: { locale }
 }: RootLayoutProps) {
-  // Validate locale
-  if (!locales.includes(locale as any)) notFound();
+  if (!locales.includes(locale)) notFound();
 
-  // Enable static rendering
   unstable_setRequestLocale(locale);
 
-  const messages = await getMessages(locale);
+  let messages;
+  try {
+    messages = (await import(`../../../messages/${locale}.json`)).default;
+  } catch {
+    notFound();
+  }
 
   return (
     <html suppressHydrationWarning>

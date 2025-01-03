@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { ToiletData } from '@/types/toilet';
 import Header from '@/components/Header';
@@ -11,9 +11,19 @@ interface DetailContentProps {
   id: string;
 }
 
+interface CSVToiletData {
+  LATITUDE: number;
+  LONGITUDE: number;
+  STRASSE: string;
+  HsNr: string;
+  PLZ: string;
+  ORT: string;
+  ANMERKUNG: string;
+  한국어: string;
+}
+
 export default function DetailContent({ id }: DetailContentProps) {
   const router = useRouter();
-  const pathname = usePathname();
   const locale = useLocale();
   const t = useTranslations();
   const [toilet, setToilet] = useState<ToiletData | null>(null);
@@ -27,7 +37,7 @@ export default function DetailContent({ id }: DetailContentProps) {
         const csvText = await response.text();
         
         const Papa = (await import('papaparse')).default;
-        Papa.parse(csvText, {
+        Papa.parse<CSVToiletData>(csvText, {
           header: true,
           dynamicTyping: true,
           complete: (results) => {
